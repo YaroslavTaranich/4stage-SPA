@@ -1,0 +1,221 @@
+@font-face {
+    font-family: 'ProximaNova';
+    src: url(../../fonts/ProximaNova.ttf);
+  }
+
+.d-none{
+  display: none;
+}
+.modal__wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.66)
+}
+.quiz__wrapper {
+    position: relative;
+    width: 800px;
+    min-height: 250px;
+    background-color:white;
+}
+.quiz__close{
+    width: 30px;
+    padding: 10px;
+    position: absolute;
+    right: -45px;
+    top: -45px;
+    /* transition: all 0.5s; */
+}
+/* .quiz__close:hover {
+    background-color: rgba(0, 0, 0, 0.26);
+    transition: all 0.5s;
+} */
+.quiz__close:hover img {
+    transform: rotate(90deg);
+    transition: all 0.3s;
+}.quiz__close img {
+    transition: all 0.3s;
+}
+.quiz__wrapper {
+    text-align: center;
+}
+.quiz__header h3 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+.quiz__question_counter, .quiz__end {
+    font-family: ProximaNova;
+    letter-spacing: 7px;
+    color: rgb(170, 170, 170);
+    margin-bottom: 10px;
+}
+.quiz__question_body h4{
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+.quiz__text_input {
+    width: 80%;
+    border-color: #eaa011;
+    padding: 10px ;
+    font-size: 15px;
+    font-family: ProximaNova;
+}
+.quiz__button_next{
+    font-size: 20px;
+    margin: 40px auto;
+    width: 80%;
+    padding: 15px 10px;
+    background-color: #eaa011;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: white;
+    transition: all 0.4s;
+}
+.quiz__button_next:hover{
+    background-color: black;
+    transition: all 0.4s;
+}
+.quiz__header_end{
+    margin-top: 40px;
+}
+.quiz__end_title{
+    padding: 10px 50px;
+}
+.quiz__end_title h4 {
+    margin: 0;
+    font-family: ProximaNova;
+    font-size: 24px;
+}
+
+/* radio inputs */
+.radio__wrapper{
+    display: flex!important;
+    text-align: left;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+}
+.radio {
+    font-family: ProximaNova;
+    font-size: 16px;
+    width: 47%;
+    margin-bottom: 15px;
+    
+}
+
+/* Radio inputs for quiz  */
+
+.custom-radio>input {
+position: absolute;
+z-index: -1;
+opacity: 0;
+}
+
+.custom-radio>span {
+display: inline-flex;
+align-items: center;
+user-select: none;
+transition: all 0.4s;
+}
+.custom-radio>span:hover {
+color: #eaa011;
+transition: all 0.4s;
+}
+
+.custom-radio>span::before {
+content: '';
+display: inline-block;
+width: 30px;
+height: 30px;
+flex-shrink: 0;
+flex-grow: 0;
+border: 1px solid #adb5bd;
+border-radius: 50%;
+margin-right: 12px;
+background-repeat: no-repeat;
+background-position: center center;
+background-size: 50% 50%;
+transition: all 0.4s;
+}
+
+.custom-radio>input:not(:disabled):not(:checked)+span:hover::before {
+border-color: #ffd1b3;
+transition: all 0.4s;
+}
+
+.custom-radio>input:not(:disabled):active+span::before {
+background-color: #ffd1b3;
+border-color: #ffd1b3;
+}
+
+.custom-radio>input:focus+span::before {
+box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.custom-radio>input:focus:not(:checked)+span::before {
+border-color: #80bdff;
+}
+
+.custom-radio>input:checked+span::before {
+border-color: #eaa011;
+background-color: #eaa011;
+background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+/* Tab Buttons Social  */
+
+.quiz__social_tab_wrapper{
+  display: flex;
+  justify-content: space-between;
+  font-family: ProximaNova;
+  font-size: 16px;
+  margin-top: 30px;
+}
+.quiz__social_tab{
+  display: flex;
+  justify-content: center;
+  /* width: 180px; */
+  width: 100%;
+  cursor: pointer;
+  border: 2px black solid;
+  margin: 0 5px;
+  padding: 15px; 
+  transition: all 0.33s;
+}
+.quiz_icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.quiz__social_tab:hover {
+  transition: all 0.33s;
+  transform: translatey(-8px);
+  box-shadow: 0px 10px 10px 1px rgba(0, 0, 0, .25);
+}
+.quiz__social_tab-active{
+  background-color:black;
+  color: white;
+}
+
+.quiz__form-phone {
+  margin: 20px 5px;
+  display: flex;
+  justify-content: center;
+}
+.quiz__phone-input {
+  font-size: 20px;
+  padding: 15px;
+  width: 70%;
+  border: 1px solid rgb(204, 204, 204);
+}
+.quiz__phone-submit {
+  font-family: ProximaNova;
+  font-size: 20px;
+  padding: 15px;
+  width: 30%;
+  background-color: #eaa011;
+  color: white
+}
