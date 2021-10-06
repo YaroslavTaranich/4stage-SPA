@@ -90,6 +90,17 @@
     font-size: 24px;
 }
 
+.quiz__warning-validation{
+  font-size: 20px;
+  font-family: ProximaNova;
+  margin-top: 20px;
+  color: red;
+}
+.quiz__result-icon {
+  height: 150px;
+  margin: 30px 0;
+}
+
 /* radio inputs */
 .radio__wrapper{
     display: flex!important;
