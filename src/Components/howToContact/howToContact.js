@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import closeIcon from './img/close.svg';
-
 
 export default class HowToContact extends Component {
     constructor(props) {
@@ -70,22 +68,15 @@ export default class HowToContact extends Component {
      render() {
 
          return (
-            <div className="modal__wrapper">
-                <div className="quiz__wrapper">
-                    <div className="quiz__close"><img src={closeIcon} alt="Закрыть"></img></div>
-                    <div className="quiz__header_end">
-                        <p className='quiz__end'>Завершение теста</p>
-                    </div>
-                    <div className="quiz__end_title">
-                        <h4>По результатам нашего теста, мы уже рассчитываем для вас стоимость аренды. Куда нам отправить результаты?</h4>
-                        {this.renderSocialButtonsAndInputs()}
-                        
-                    </div>
-                    
-
+            <>
+                <div className="quiz__header_end">
+                    <p className='quiz__end'>Завершение теста</p>
                 </div>
-            </div>
-         )
-         
+                <div className="quiz__end_title">
+                    <h4>По результатам нашего теста, мы уже рассчитываем для вас стоимость аренды. Куда нам отправить результаты?</h4>
+                    {this.renderSocialButtonsAndInputs()} 
+                </div>
+            </>
+         )        
      }
 }

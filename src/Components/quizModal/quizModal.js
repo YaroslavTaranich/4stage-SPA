@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import validator from 'validator'; 
 import './quizModal.css';
+import closeIcon from './img/close.svg'
 import Question from "../questions/questions";
 import HowToContact from "../howToContact/howToContact";
 import Spinner from "../spinner/spinner";
@@ -21,6 +22,14 @@ export default class QuizModal extends Component {
             contact: null,
             isValidEmail: null,
             isValidPhone: null            
+        }
+    }
+
+    hideModalByDisplay = (event) => {    
+        if (event.target.classList.contains('close')){
+            this.setState({
+                display: false
+            })
         }
     }
 
@@ -97,16 +106,29 @@ export default class QuizModal extends Component {
         } 
     }
 
+    toBeginOfQuiz = () => {
+        this.setState({
+            currentQuestion: 0,
+            progress: "ask",
+            date: null,
+            place: null,
+            format: null,
+            guests: null,
+            program: null,
+            howToContact: null,
+            contact: null,
+            isValidEmail: null,
+            isValidPhone: null 
+        })
+    }
+
    
     render () {
       
 
         const {currentQuestion, progress, date, place, format, guests, program, howToContact, isValidEmail, isValidPhone} = this.state;
 
-
-
-        if (progress === 'ask') {
-            return (
+        const question = progress === 'ask' ? 
                 <Question 
                 updateData={this.updateData} 
                 nextQ={this.nextQ} 
@@ -116,10 +138,9 @@ export default class QuizModal extends Component {
                 format={format}
                 guests={guests}
                 program={program}>
-                </Question>       
-            )
-        } if (progress === 'contact') {
-            return(
+                </Question> : null;
+
+        const contacts = progress === 'contact' ? 
                 <HowToContact
                 updateData={this.updateData} 
                 onChooseSocial={this.onChooseSocial}
@@ -128,22 +149,34 @@ export default class QuizModal extends Component {
                 howToContact={howToContact}
                 isValidEmail={isValidEmail}
                 isValidPhone={isValidPhone}
-                ></HowToContact>
-            )
-        } if (progress === 'loading') {
-            return(
-                <Spinner></Spinner>
-            )
-        } if (progress === 'success') {
-            return(
-                <Success></Success>
-            )
-        } if (progress === 'error') {
-            return(
-                <Success></Success>
-            )
-        }
+                ></HowToContact> : null;
+        
+        const loading = progress === 'loading' ?  <Spinner></Spinner> : null;
+        const success = progress === 'success' ? 
+                <Success
+                toBeginOfQuiz={this.toBeginOfQuiz}
+                ></Success> : null;
+        const errorQuiz = progress === 'error' ? 
+                <ErrorQuiz
+                toBeginOfQuiz={this.toBeginOfQuiz}
+                ></ErrorQuiz> : null;
+        const displayClass = this.props.display ? null : "d-none";
+        
+        return (
+            <div 
+            className={displayClass + " modal__wrapper close"}
+            onClick={this.props.toggleModalQuiz}
+            >
+                <div className="quiz__wrapper">
+                    <div className="quiz__close"><img className="close" src={closeIcon} alt="Закрыть"></img></div>
+                    {question}
+                    {contacts}
+                    {loading}
+                    {success}
+                    {errorQuiz} 
+                </div>
+            </div>
 
-
+            )
     }
 }

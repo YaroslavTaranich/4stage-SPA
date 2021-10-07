@@ -9,5 +9,7 @@
 
 body {
   font-family: BabesNeueRegular;
+  margin: 0;
+  box-sizing: border-box;
 }
 

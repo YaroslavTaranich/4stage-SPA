@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import closeIcon from './img/close.svg';
 
 export default class Question extends Component {
     constructor(props) {
@@ -88,26 +87,23 @@ export default class Question extends Component {
         const {currentQuestion} = this.props;
 
         return (
-            <div className="modal__wrapper">
-                <div className="quiz__wrapper">
-                    <div className="quiz__close"><img src={closeIcon} alt="Закрыть"></img></div>
-                    <div className="quiz__header">
-                        <h3>Рассчитать стоимость</h3>
-                        <p className='quiz__question_counter'>Вопрос {currentQuestion + 1} из {questions.length}</p>
-                    </div>
-                    <div className="quiz__question_body">
-                        <h4>{questions[currentQuestion].title}</h4>
-                        {this.renderQuestion(questions[currentQuestion])}
-
-                    </div>
-                    <div 
-                    className='quiz__button_next'
-                    onClick={() => {this.props.nextQ(questions.length)}}                    
-                    >
-                        {questions.length - 1 > currentQuestion ? buttonLabel.next : buttonLabel.last}
-                    </div>
+            <>
+                <div className="quiz__header">
+                    <h3>Рассчитать стоимость</h3>
+                    <p className='quiz__question_counter'>Вопрос {currentQuestion + 1} из {questions.length}</p>
                 </div>
-            </div>
+                <div className="quiz__question_body">
+                    <h4>{questions[currentQuestion].title}</h4>
+                    {this.renderQuestion(questions[currentQuestion])}
+
+                </div>
+                <div 
+                className='quiz__button_next'
+                onClick={() => {this.props.nextQ(questions.length)}}                    
+                >
+                    {questions.length - 1 > currentQuestion ? buttonLabel.next : buttonLabel.last}
+                </div>
+            </>
         )
     }
 

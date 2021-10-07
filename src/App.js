@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
-import QuizModal from './Components/quizModal/quizModal';
+import Header from './Components/header/header';
+import MainPage from './Components/pages/mainPage/mainPage';
 
 export default class App extends Component {
 
 
   render () {
     return (
-      <QuizModal></QuizModal>
+      <>
+        <Header></Header>
+        <MainPage></MainPage>
+      </>
     )
   }
 ;

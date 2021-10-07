@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'ProximaNova';
+    src: url(../../../fonts/ProximaNova.ttf);
+  }
+  
+.main_page{
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    background-image: url(./img/background.jpg) ;
+    background-position:center;
+    display: flex;
+    justify-content: space-between;
+}
+h1 {
+    margin: 0;
+    font-size: 5rem;
+    color: white;
+}
+.main_page__text p {
+    font-family: ProximaNova;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 40px 0;
+}
+.main_page__text{
+    width: 800px;
+    height: 800px;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+.main-page__button-quiz{
+    width: 40%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-align: center;
+    padding: 25px ;
+    color: white;
+    background-color: #eaa011;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+.main-page__button-quiz:hover{
+    transform: translatey(-8px);
+    transition: all 0.4s;
+}
