@@ -1,0 +1,143 @@
+@font-face {
+    font-family: 'ProximaNova';
+    src: url(../../fonts/ProximaNova.ttf);
+  }
+@font-face {
+font-family: BebasNeueRegular;
+src: url(../../fonts/BebasNeue/BebasNeueRegular.ttf);
+}
+.order-modal__wrapper{
+    box-sizing:border-box;
+    z-index: 999;
+    position: fixed;
+    left: 0; 
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.66)
+  }
+  .order__wrapper {
+      position: relative;
+      width: 800px;
+      min-height: 250px;
+      background-color:white;
+      text-align: center;
+  }
+  .order__close{
+      width: 30px;
+      padding: 10px;
+      position: absolute;
+      right: -45px;
+      top: -45px;
+  }
+
+  .order__close:hover img {
+      transform: rotate(90deg);
+      transition: all 0.3s;
+  }.order__close img {
+      transition: all 0.3s;
+      cursor: pointer;
+  }
+  .order__wrapper h2{
+    font-size: 2.5rem;
+    letter-spacing: 1.5px;
+    width: 70%;
+    margin: 40px auto;
+  }
+  .order-form {
+      display: block;
+      width: 80%;
+      margin: 0 auto;
+      text-align: left;
+  }
+  .order-input {
+      position: relative;
+      background: transparent;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: start;
+  }
+  .order-input img {
+      position: absolute;
+      top: 22px;
+      left: 27px;
+      height: 20px;
+  }
+  .input-label{
+    font-family: ProximaNova;
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    display: block;
+
+  }
+  .order-input input, textarea, .order-file-input{
+    font-family: ProximaNova;
+    font-weight: 400;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    min-height: 60px;
+    padding-left: 70px; 
+    width: 100%;
+    font-size: 1.2rem;
+    transform: none;
+    outline: none;
+    transition: all 0.4s;
+    margin-bottom: 30px;
+  }
+  .order-input textarea {
+    padding: 20px;
+    min-height: 100px;
+  }
+  .order-input input:focus, textarea:focus, .order-file-input:hover{
+    border: 1px solid #eaa011;
+    transition: all 0.4s;
+  }
+  .order-input input::placeholder {
+      color: rgba(0, 0, 0, 0.2);
+  }
+  #input-file {
+      display: none;
+  }
+  .input-label-file {
+    padding:  18px;
+    display: block;
+    width: 150px;
+    text-align: center;
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    transition: all 0.4s;
+
+}
+.input-label-file:hover{
+    background-color: #eaa011;
+    color: white;
+    transition: all 0.4s;
+}
+.order-button{
+    font-family: BebasNeueRegular;
+    font-size: 1.5rem;
+    border: 1px solid #eaa011;
+    background-color: white;
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    padding: 15px 10px;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: black;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+.order-button:hover{
+    background-color: #eaa011;
+    color: white;
+    transition: all 0.4s;
+}

@@ -1,0 +1,20 @@
+{
+    "url": "https://dogecoin-forum.ru/photoGallery/",
+    "itemData": {
+        "itemId": "img-id",
+        "mediaUrl": "",
+        "metaData": {
+            "type": "image",
+            "title": "image-4stage",
+            "description": "",
+            "focalPoint": [
+                0,
+                0
+            ],
+            "link": {
+                "url": "http://4stage.ru",
+                "target": "_blank"
+            }
+        }
+    }
+}

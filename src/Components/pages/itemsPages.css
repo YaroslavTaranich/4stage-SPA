@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'ProximaNova';
+    src: url(../../fonts/ProximaNova.ttf);
+  }
+@font-face {
+    font-family: BabesNeueRegular;
+    src: url(../../fonts/BebasNeue/BebasNeueRegular.ttf);
+  }
+.items-list__page {
+    width: 80%;
+    margin: 0 auto;
+}
+.items-list__page h1 {
+    margin: 50px 0;
+    text-align: center;
+}
+.item__wrapper{
+    font-family: ProximaNova;
+    display: flex;
+    justify-content: start;
+    /* flex-wrap: wrap; */
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: 30px auto;
+    color: white;
+}
+.img-wrapper{
+    height: 600px;
+    width: 60%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-wrapper img{
+    height: 100%;
+}
+.item__text {
+    display: block;
+    padding: 20px 40px;
+    width: 40%;
+}
+.item__text h3{
+    font-family: BabesNeueRegular;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    font-size: 3rem;
+}
+.item__text p{
+    font-size: 1.25rem;
+}
+.item__text-button{
+    font-family: BabesNeueRegular;
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 20px auto;
+    padding: 15px 100px;
+    background-color: #eaa011;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    color: white;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+.item__text-button:hover{
+    background-color: white;
+    color: black;
+    transition: all 0.4s;
+}

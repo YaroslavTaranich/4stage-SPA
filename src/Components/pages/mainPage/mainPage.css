@@ -5,16 +5,29 @@
   
 .main_page{
     margin: 0;
-    height: 100vh;
     width: 100%;
-    background-image: url(./img/background.jpg) ;
+    /* background-image: url(./img/background.jpg) ;
     background-position:center;
+    background-attachment: fixed; */
+    padding-bottom: 50px;
+    min-height: 85vh;
+
+}
+.main_page__heroes{
+    padding-top: 50px;
+
     display: flex;
     justify-content: space-between;
 }
 h1 {
     margin: 0;
     font-size: 5rem;
+    color: white;
+}
+h3 {
+    font-family: ProximaNova;
+    margin: 0;
+    font-size: 3rem;
     color: white;
 }
 .main_page__text p {
@@ -26,7 +39,6 @@ h1 {
 .main_page__text{
     width: 800px;
     height: 800px;
-    margin-top: 100px;
     margin-left: 100px;
 }
 .main-page__button-quiz{
@@ -44,4 +56,50 @@ h1 {
 .main-page__button-quiz:hover{
     transform: translatey(-8px);
     transition: all 0.4s;
+}
+.main_page__apparat{
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    height: 76vh;
+    margin-right: 100px;
+}
+.apparat-hero{
+    height: 17vh;
+    display: flex;
+    overflow: hidden;
+    align-items:center;
+    background-color:white;
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.apparat-hero a, .apparat-hero-title {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+.apparat-hero a:hover, .apparat-hero-title:hover {
+    color: #eaa011;
+    transition: all 0.4s;
+}
+.apparat-hero img{
+    width: 200px;
+    /* height: 200px; */
+    margin-right: 40px;
+}
+
+
+
+
+.photo__gallery{
+    padding-bottom: 100px;
+    width: 100%;
+
+}
+.photo__gallery h3 {
+    margin-bottom: 40px;
+    margin-left: 100px;
+
 }

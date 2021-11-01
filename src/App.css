@@ -11,5 +11,11 @@ body {
   font-family: BabesNeueRegular;
   margin: 0;
   box-sizing: border-box;
+  background-image: url(./img/bg2.jpg) ;
+  background-position:center;
+  background-attachment: fixed;
+}
+h3 {
+  font-family: BabesNeueRegular;
 }
 

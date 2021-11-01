@@ -161,7 +161,7 @@ export default class QuizModal extends Component {
                 toBeginOfQuiz={this.toBeginOfQuiz}
                 ></ErrorQuiz> : null;
         const displayClass = this.props.display ? null : "d-none";
-        
+        document.body.style.overflow = this.props.display ? "hidden" : "";
         return (
             <div 
             className={displayClass + " modal__wrapper close"}

@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'ProximaNova';
+    src: url(../../fonts/ProximaNova.ttf);
+  }
+
+.links__title h2{
+    margin: 25px;
+    font-family: ProximaNova;
+    font-size: 2.5rem;
+    text-align: center;
+    color: white;
+}
+
+.links__wrapper{
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0 100px 0;
+
+}
+.link-with-pic{
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-decoration: none;
+    width: 400px;
+    margin: 70px 20px 0 20px;
+}
+.link-with-pic img {
+    display: block;
+    margin: 0 auto;
+    margin-top: -50px;
+    width: 250px;
+    z-index: 999;
+    transition: all 0.4s;
+}
+.link-with-pic img:hover {
+    transform: translatey(-10px);
+    transition: all 0.4s;   
+}
+.link-with-pic h4 {
+    font-size: 1.7rem;
+    letter-spacing: 2.2px;
+    margin: 0;
+    /* transform: translatey(-50px);    */
+
+}
+
+
+.links__button{
+    /* transform: translatey(-50px);    */
+
+    font-size: 1.8rem;
+    margin: 20px auto;
+    width: 80%;
+    padding: 15px 10px;
+    background-color: #eaa011;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: white;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+.links__button:hover{
+    background-color: white;
+    color: black;
+    transition: all 0.4s;
+}
