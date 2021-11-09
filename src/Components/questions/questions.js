@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 
 export default class Question extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
 
     renderQuestion = (question) => {
         if (question.type === 'date') {

@@ -5,33 +5,11 @@ import svet from './img/svet_img.png';
 import video from './img/Video.png';
 import stage from './img/Stage.png';
 import { Component } from 'react';
-import OrderModal from '../orderModal/orderModal';
+
 
 export default class PicsWithLink extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            display: false,
-            modalData: null          
-        }
-    }
 
-    showOrderModal = (item) => {
-        this.setState({
-            display: true,
-            modalData: item
-        })
-    }
-    hideOrderModal = (e) => {
-        if (e.target.classList.contains('close')) {
-            this.setState({
-                display: false
-            })
-        }
-    }
-
-    
     render() {
 
         return(
@@ -53,7 +31,6 @@ export default class PicsWithLink extends Component {
                 <div 
                 className="link-with-pic"
                 onClick={() => this.props.showOrderModal({title: "видео обородование"})}
-
                 >
                     <img src={video} alt="sound pic"></img>
                     <h4>Видео Экраны</h4>

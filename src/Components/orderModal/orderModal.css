@@ -19,13 +19,15 @@ src: url(../../fonts/BebasNeue/BebasNeueRegular.ttf);
     justify-content: center;
     overflow: hidden;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.66)
   }
   .order__wrapper {
       position: relative;
       width: 800px;
-      min-height: 250px;
+      max-height: 95%;
+      overflow-x: hidden;
+      overflow-y: auto;
       background-color:white;
       text-align: center;
   }
@@ -33,8 +35,8 @@ src: url(../../fonts/BebasNeue/BebasNeueRegular.ttf);
       width: 30px;
       padding: 10px;
       position: absolute;
-      right: -45px;
-      top: -45px;
+      right: 10px;
+      top: 10px;
   }
 
   .order__close:hover img {
@@ -102,6 +104,9 @@ src: url(../../fonts/BebasNeue/BebasNeueRegular.ttf);
   .order-input input::placeholder {
       color: rgba(0, 0, 0, 0.2);
   }
+  .order-file-input{ 
+    display: flex;
+  }
   #input-file {
       display: none;
   }
@@ -140,4 +145,8 @@ src: url(../../fonts/BebasNeue/BebasNeueRegular.ttf);
     background-color: #eaa011;
     color: white;
     transition: all 0.4s;
+}
+.input-file-name {
+  padding: 18px;
+  color:rgba(0, 0, 0, 0.657)
 }

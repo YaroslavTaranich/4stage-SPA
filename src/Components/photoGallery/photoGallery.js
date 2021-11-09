@@ -2,7 +2,8 @@ import { ProGallery } from 'pro-gallery';
 import 'pro-gallery/dist/statics/main.css';
 import './photoGallery.css';
 import photoGaleryJSON from '../../photoGalery.json';
-
+// тут будет загружаться JSON файл с сервера для возмозможности редактирования количества картинок в галерее
+// к галерее есть вопросы возможно буду использовать другую или писать сам
 export default function Gallery() {
     const itemsCount = 12;
 

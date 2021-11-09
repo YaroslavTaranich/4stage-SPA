@@ -5,8 +5,8 @@ import closeIcon from './img/close.svg'
 import Question from "../questions/questions";
 import HowToContact from "../howToContact/howToContact";
 import Spinner from "../spinner/spinner";
-import ErrorQuiz from "../error/error";
 import Success from "../success/succes";
+import ErrorLoading from "../error/error";
 export default class QuizModal extends Component {
     constructor(props) {
         super(props);
@@ -48,11 +48,6 @@ export default class QuizModal extends Component {
             [event.target.name]: event.target.value
         });
     }
-    updateContact = (event) => {
-        this.setState({
-            [event.target.name]: event.target.value
-        });
-    }
 
     onChooseSocial = (social) => {
         this.setState({
@@ -89,7 +84,7 @@ export default class QuizModal extends Component {
                     this.setState({
                         progress: 'loading'
                     })
-                    console.log(this.state)
+                    // console.log(this.state)
                     if(response.ok) {
                     this.setState({
                         progress: 'success'
@@ -125,7 +120,6 @@ export default class QuizModal extends Component {
    
     render () {
       
-
         const {currentQuestion, progress, date, place, format, guests, program, howToContact, isValidEmail, isValidPhone} = this.state;
 
         const question = progress === 'ask' ? 
@@ -151,15 +145,15 @@ export default class QuizModal extends Component {
                 isValidPhone={isValidPhone}
                 ></HowToContact> : null;
         
-        const loading = progress === 'loading' ?  <Spinner></Spinner> : null;
+        const loading = progress === 'loading' ?  <Spinner/> : null;
         const success = progress === 'success' ? 
                 <Success
                 toBeginOfQuiz={this.toBeginOfQuiz}
-                ></Success> : null;
+                /> : null;
         const errorQuiz = progress === 'error' ? 
-                <ErrorQuiz
+                <ErrorLoading
                 toBeginOfQuiz={this.toBeginOfQuiz}
-                ></ErrorQuiz> : null;
+                /> : null;
         const displayClass = this.props.display ? null : "d-none";
         document.body.style.overflow = this.props.display ? "hidden" : "";
         return (
@@ -176,7 +170,6 @@ export default class QuizModal extends Component {
                     {errorQuiz} 
                 </div>
             </div>
-
             )
     }
 }

@@ -27,8 +27,8 @@ export default class MainPage extends Component {
                 display: true
             })
         }
-
     }
+    
     render() {
 
         return(
@@ -59,7 +59,10 @@ export default class MainPage extends Component {
                         </div>
                         <div className="apparat-hero">
                             <img src={video} alt="sound pic"></img>
-                            <div className="apparat-hero-title">Видео Экраны</div>
+                            <div 
+                            className="apparat-hero-title"
+                            onClick={() => this.props.showOrderModal({title: "видео обородование"})}
+                            >Видео и Экраны</div>
                         </div>
                         <div className="apparat-hero">
                             <img src={stage} alt="sound pic"></img>
@@ -75,8 +78,6 @@ export default class MainPage extends Component {
                     <PhotoGallery></PhotoGallery>
                 </div>
             </div>
-
-
             </>
         ) 
     }
