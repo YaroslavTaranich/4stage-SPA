@@ -30,10 +30,10 @@ export default class PicsWithLink extends Component {
                 </Link>
                 <div 
                 className="link-with-pic"
-                onClick={() => this.props.showOrderModal({title: "видео обородование"})}
+                onClick={() => this.props.showOrderModal({title: "видео оборудование"})}
                 >
                     <img src={video} alt="sound pic"></img>
-                    <h4>Видео Экраны</h4>
+                    <h4>Видео и Экраны</h4>
                     <div className="links__button">Заказать</div>
                 </div>
                 <Link className="link-with-pic" to="/stage/">

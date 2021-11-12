@@ -61,7 +61,7 @@ export default class MainPage extends Component {
                             <img src={video} alt="sound pic"></img>
                             <div 
                             className="apparat-hero-title"
-                            onClick={() => this.props.showOrderModal({title: "видео обородование"})}
+                            onClick={() => this.props.showOrderModal({title: "видео оборудование"})}
                             >Видео и Экраны</div>
                         </div>
                         <div className="apparat-hero">

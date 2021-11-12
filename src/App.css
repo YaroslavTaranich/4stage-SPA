@@ -14,8 +14,14 @@ body {
   background-image: url(./img/bg2.jpg) ;
   background-position:center;
   background-attachment: fixed;
+  padding-top: 96px;
 }
 h3 {
   font-family: BabesNeueRegular;
 }
 
+@media screen and (max-width:425px),only screen and (max-device-width:425px){
+  body {
+    padding-top: 50px;
+  }
+}

@@ -13,15 +13,15 @@ export default class QuizModal extends Component {
         this.state = {
             progress: 'ask',
             currentQuestion: 0,
-            date: null,
-            place: null,
-            format: null,
-            guests: null,
-            program: null,
-            howToContact: null,
-            contact: null,
-            isValidEmail: null,
-            isValidPhone: null            
+            date: "",
+            place: "",
+            format: "",
+            guests: "",
+            program: "",
+            howToContact: "",
+            contact: "",
+            isValidEmail: "",
+            isValidPhone: ""            
         }
     }
 
@@ -79,7 +79,7 @@ export default class QuizModal extends Component {
 
         if(this.state.isValidEmail || this.state.isValidPhone) {
             try {
-                fetch('send.php', { method: 'POST', body: formData })
+                fetch('https://4stage.ru/sendQuiz.php', { method: 'POST', body: formData })
                 .then((response) => {
                     this.setState({
                         progress: 'loading'
@@ -105,15 +105,15 @@ export default class QuizModal extends Component {
         this.setState({
             currentQuestion: 0,
             progress: "ask",
-            date: null,
-            place: null,
-            format: null,
-            guests: null,
-            program: null,
-            howToContact: null,
-            contact: null,
-            isValidEmail: null,
-            isValidPhone: null 
+            date: "",
+            place: "",
+            format: "",
+            guests: "",
+            program: "",
+            howToContact: "",
+            contact: "",
+            isValidEmail: "",
+            isValidPhone: "" 
         })
     }
 
@@ -154,7 +154,7 @@ export default class QuizModal extends Component {
                 <ErrorLoading
                 toBeginOfQuiz={this.toBeginOfQuiz}
                 /> : null;
-        const displayClass = this.props.display ? null : "d-none";
+        const displayClass = this.props.display ? "" : "d-none";
         document.body.style.overflow = this.props.display ? "hidden" : "";
         return (
             <div 

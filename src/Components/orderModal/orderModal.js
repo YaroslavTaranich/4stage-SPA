@@ -13,7 +13,11 @@ export default class OrderModal extends Component{
         super(props);
         this.state = {
             progress: "form",
-            fileName: null
+            fileName: null,
+            nameOrder: "",
+            telOrder: "",
+            commentOrder: "",
+            file: undefined
         }
     }    
 
@@ -24,24 +28,39 @@ export default class OrderModal extends Component{
         document.body.style.overflow = '';
     }
 
-    getFileName = (e) => {
-        this.setState({fileName: e.target.files[0].name})
+    getFile = (e) => {
+        this.setState({
+            fileName: e.target.files[0].name,
+            [e.target.name] : e.target.files[0]
+        })
     }
 
     formRefresh = () => {
         this.setState({progress: "form"});
     }
-
+    inputHandler = (e) => {
+        this.setState({
+            [e.target.name] : e.target.value
+        })
+    }
+ 
     sendData = (e) => {
         e.preventDefault();
-         const formData = new FormData(e.target.form);
+        const fileInput = document.getElementById("input-file")
+        const formData = new FormData();
+        formData.append('name', this.state.nameOrder);
+        formData.append('fileName', this.state.fileName);
+        formData.append('phone', this.state.telOrder);
+        formData.append('comment', this.state.commentOrder);
+        formData.append('file', fileInput.files[0]);
+        console.log(this.state);
+        console.log(formData.get("file"));
          try {
-            fetch('send.php', { method: 'POST', body: formData })
+            fetch('https://4stage.ru/send.php', { method: 'POST', body: formData })
             .then((response) => {
                 this.setState({
                     progress: 'loading'
                 })
-                // console.log(this.state)
                 if(response.ok) {
                 this.setState({
                     progress: 'success'
@@ -68,24 +87,46 @@ export default class OrderModal extends Component{
                 <label className="input-label" htmlFor="name-order">Введите Ваше имя:</label>
                 <div className="order-input">
                     <img src={nameIcon} alt="name icon"/>
-                    <input id="name-order" name="name-order" type="name" placeholder="Иван Петров"/>
+                    <input 
+                    id="name-order" 
+                    name="nameOrder"
+                    value={this.state.nameOrder}
+                    onChange={this.inputHandler} 
+                    type="name" 
+                    placeholder="Иван Петров"/>
                 </div>
                 <label className="input-label" htmlFor="tel-order">Введите Ваш номер телефна:</label>
                 <div className="order-input">
                     <img src={phoneIcon} alt="tel icon"/>
-                    <input id="tel-order" name="tel-order" type="tel" placeholder="89991234567"/>
+                    <input 
+                    id="tel-order" 
+                    name="telOrder"
+                    value={this.state.telOrder}
+                    onChange={this.inputHandler} 
+                    type="tel" 
+                    placeholder="89991234567"/>
                 </div>
                 <label className="input-label" htmlFor="comment-order">Комментарий к заказу:</label>
                 <div className="order-input">
-                    <textarea id="comment-order" name="comment-order" type="tel"/>
+                    <textarea 
+                    id="comment-order" 
+                    name="commentOrder"
+                    value={this.state.commentOrder}
+                    onChange={this.inputHandler} 
+                    type="text"/>
                 </div>
                 <label className="input-label" >Можете прикрепить файл с техническим заданием или райдером артиста:</label>
                 <div className="order-input">
                     <div className="order-file-input">
                         <img src={fileIcon} alt="file icon"/>
                         <label className="input-label-file" htmlFor="input-file">Загрузить файл</label>
-                        <input id="input-file" name="input-file" type="file" accept="image/*, .pdf, .doc, .docx, .txt, .xls, xlsx"
-                        onChange={this.getFileName}/>
+                        <input 
+                        id="input-file" 
+                        name="file" 
+                        type="file"
+                        accept="image/*, .pdf, .doc, .docx, .txt, .xls, xlsx"
+                        // value={this.state.file}
+                        onChange={this.getFile}/>
                        <div className="input-file-name">{this.state.fileName}</div>
                     </div>
                 </div>

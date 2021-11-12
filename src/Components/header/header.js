@@ -42,7 +42,7 @@ export default class Header extends Component {
                         <a href="tel:+79104048423"><img src={phoneIcon} alt="icon phone"></img></a>          
                         <a href="tel:+79104048423"> +7 910 404 84 23</a>
                     </div>
-                    <div className="header__contact">
+                    <div className="header__contact header-email">
                         <a href="mailto:4STAGE@mail.ru?subject=hello!"><img src={emailIcon} alt="icon email"></img></a>                        
                         <a href="mailto:4STAGE@mail.ru?subject=hello!"> 4STAGE@mail.ru</a>
                     </div>

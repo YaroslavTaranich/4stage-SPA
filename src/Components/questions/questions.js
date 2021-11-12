@@ -56,7 +56,7 @@ export default class Question extends Component {
                 title: 'Формат мероприятия',
                 type: 'radio',
                 inputName: "format",
-                inputValues: ["b-day", "corporativ", "wedding", "presetatio", "outdoor", "another"],
+                inputValues: ["b-day", "corporativ", "wedding", "presentasion", "outdoor", "another"],
                 inputTitles: ["День рождения", "Корпоратив", "Свадьба", "Презентация", "Уличное мероприятие", "Другое"],
             },
             {
@@ -70,7 +70,7 @@ export default class Question extends Component {
                 title: 'Программа мероприятия',
                 type: 'radio',
                 inputName: "program",
-                inputValues: ["liveSound", "dance", "fon", "presetatio", "another"],
+                inputValues: ["liveSound", "dance", "fon", "presentasion", "another"],
                 inputTitles: ['Выступление "Живых коллективов"', "Дискотека", "Фоновая музыка", "Презентация", "Другое"],
             },
         ];
