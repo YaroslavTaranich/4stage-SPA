@@ -11,13 +11,16 @@ body {
   font-family: BabesNeueRegular;
   margin: 0;
   box-sizing: border-box;
-  background-image: url(./img/bg2.jpg) ;
-  background-position:center;
-  background-attachment: fixed;
   padding-top: 96px;
 }
 h3 {
   font-family: BabesNeueRegular;
+}
+.app{
+  background-image: url(./img/bg2.jpg) ;
+  background-position:center;
+  background-attachment: fixed;
+  min-height: 200vh;
 }
 
 @media screen and (max-width:425px),only screen and (max-device-width:425px){

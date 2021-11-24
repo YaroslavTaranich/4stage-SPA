@@ -17,5 +17,14 @@
                 "target": "_blank"
             }
         }
+    },
+    "options": {
+        "galleryLayout": 3,
+        "cubeType": "",
+        "hoveringBehaviour": "NEVER_SHOW",
+        "thumbnailSpacings": 5,
+        "arrowsVerticalPosition": "IMAGE_CENTER",
+        "thumbnailSize": 140,
+        "overlayBackground": "rgba(8,8,8,0)"
     }
 }

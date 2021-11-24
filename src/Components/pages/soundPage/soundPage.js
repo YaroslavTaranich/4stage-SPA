@@ -4,7 +4,7 @@ import sound1 from './img/sound1.jpg';
 import soundCover from './img/sound-cover.JPG'
 import soundChastnoe from './img/soundChastnoe.JPG'
 import { Component } from 'react';
-
+import DocumentMeta from 'react-document-meta';
 
 
 // const turbosound = {
@@ -78,15 +78,29 @@ const SoundAPI = [
 export default class SoundPage extends Component {
 
     render() {
+        const meta = {
+            title: 'Комплект звука в аренду в Москве',
+            description: 'Звуковое оборудование в аренду для любых мероприятий. Полное техническое сопровождение. Выполнение технического райдера артистов. Доставка и монтаж.',
+            canonical: 'https://4stage.ru/zvuk',
+            meta: {
+              charset: 'utf-8',
+              name: {
+                keywords: 'звук, аренда, музыка, оборудование, концерт, выстепление артистов'
+              }
+            }
+          };
 
         return (
-            <div className='items-list__page container'>
-                <h1>Комплекты звукового оборудования</h1>
-                <ListItemsToPages
-                API={SoundAPI}
-                showOrderModal={this.props.showOrderModal}
-                ></ListItemsToPages>
-            </div>
+            <DocumentMeta {...meta}>
+                <div className='items-list__page container'>
+                    <h1>Комплекты звукового оборудования</h1>
+                    <ListItemsToPages
+                    API={SoundAPI}
+                    showOrderModal={this.props.showOrderModal}
+                    ></ListItemsToPages>
+                </div>
+            </DocumentMeta>
+            
         )
     }
 }

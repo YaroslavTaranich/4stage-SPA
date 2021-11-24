@@ -53,6 +53,7 @@ export default class OrderModal extends Component{
         formData.append('phone', this.state.telOrder);
         formData.append('comment', this.state.commentOrder);
         formData.append('file', fileInput.files[0]);
+        formData.append('orderTitle', this.props.modalData.title)
         console.log(this.state);
         console.log(formData.get("file"));
          try {
@@ -88,6 +89,7 @@ export default class OrderModal extends Component{
                 <div className="order-input">
                     <img src={nameIcon} alt="name icon"/>
                     <input 
+                    required
                     id="name-order" 
                     name="nameOrder"
                     value={this.state.nameOrder}
@@ -99,6 +101,7 @@ export default class OrderModal extends Component{
                 <div className="order-input">
                     <img src={phoneIcon} alt="tel icon"/>
                     <input 
+                    required
                     id="tel-order" 
                     name="telOrder"
                     value={this.state.telOrder}
@@ -125,7 +128,6 @@ export default class OrderModal extends Component{
                         name="file" 
                         type="file"
                         accept="image/*, .pdf, .doc, .docx, .txt, .xls, xlsx"
-                        // value={this.state.file}
                         onChange={this.getFile}/>
                        <div className="input-file-name">{this.state.fileName}</div>
                     </div>

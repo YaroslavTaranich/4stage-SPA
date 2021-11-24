@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import DocumentMeta from 'react-document-meta';
 import ListItemsToPages from '../../listItemsToPages/listItemsToPages';
 import '../itemsPages.css';
 import chastnoe from './img/chastnoe-light-2.jpg';
@@ -84,15 +85,29 @@ const lightAPI = [
 export default class LightPage extends Component {
 
     render() {
+        const meta = {
+            title: 'Концертный свет в аренду в Москве',
+            description: 'Световое оборудование для мероприятий в аренду. Полное техническое обеспечение. Качественные профессиональные световые приборы',
+            canonical: 'https://4stage.ru/svet',
+            meta: {
+              charset: 'utf-8',
+              name: {
+                keywords: 'сцена, аренда, музыка,свет, световое, концерт, оборудование, концерт, выстепление артистов, конструкции из ферм'
+              }
+            }
+          };
 
         return (
-            <div className='items-list__page container'>
-                <h1>Комплекты светового оборудования</h1>
-                <ListItemsToPages
-                API={lightAPI}
-                showOrderModal={this.props.showOrderModal}
-                ></ListItemsToPages>
-            </div>
+            <DocumentMeta {...meta}>
+                <div className='items-list__page container'>
+                    <h1>Комплекты светового оборудования</h1>
+                    <ListItemsToPages
+                    API={lightAPI}
+                    showOrderModal={this.props.showOrderModal}
+                    ></ListItemsToPages>
+                </div>
+            </DocumentMeta>
+
         )
     }
 }

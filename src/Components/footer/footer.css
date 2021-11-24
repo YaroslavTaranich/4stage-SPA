@@ -1,0 +1,20 @@
+.footer{
+    background-color: #424241;
+}
+.footer__social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: center;
+}
+.footer__social-icon{
+    width: 25px;
+    height: 25px;
+    margin: 20px; 
+    transition: all 0.33s;
+}
+
+.footer__social-icon:hover{
+    transition: all 0.33s;
+    transform: translatey(-5px);
+}

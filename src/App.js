@@ -7,6 +7,8 @@ import SoundPage from './Components/pages/soundPage/soundPage';
 import LightPage from './Components/pages/lightPage/lightPage';
 import OrderModal from './Components/orderModal/orderModal';
 import StagePage from './Components/pages/stagePage/stagePage';
+import Footer from './Components/footer/footer';
+import ScrollToTop from './Components/scrollToTop/scrollToTop';
 
 
 export default class App extends Component {
@@ -40,7 +42,9 @@ export default class App extends Component {
               />
           : null;
     return (
+      <div className="app">
       <BrowserRouter>
+      <ScrollToTop/>
         {OrderModalElem}
         <Header></Header>
         <Route exact path="/">
@@ -64,6 +68,8 @@ export default class App extends Component {
             />
         </Route>
       </BrowserRouter>
+      <Footer/>
+      </div>
     )
   }
 ;

@@ -47,9 +47,7 @@ export default class ListItemsToPages extends Component {
         }
     }
 
-
     render(){
-        console.log(this.renderPageItems(this.props.API))
         return(
             <>
             {this.renderPageItems(this.props.API)}

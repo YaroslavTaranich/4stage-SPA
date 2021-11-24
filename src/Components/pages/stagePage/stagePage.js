@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import DocumentMeta from 'react-document-meta';
 import ListItemsToPages from '../../listItemsToPages/listItemsToPages';
 import '../itemsPages.css';
 import stage3x4 from './img/stage-3-4-crop.jpg';
@@ -74,15 +75,29 @@ const stageAPI = [
 export default class StagePage extends Component {
 
     render() {
+        const meta = {
+            title: 'Сценические конструкции в аренду в Москве',
+            description: 'Аренда сценического подиума и конструкций из алюминиевых ферм для любых мероприятий. Аренда уличных сцен. Доставка и монтаж.',
+            canonical: 'https://4stage.ru/stage',
+            meta: {
+              charset: 'utf-8',
+              name: {
+                keywords: 'сцена, аренда, музыка, оборудование, концерт, выстепление артистов, конструкции из ферм'
+              }
+            }
+          };
 
         return (
-            <div className='items-list__page container'>
-                <h1>Сценические конструкции</h1>
-                <ListItemsToPages
-                API={stageAPI}
-                showOrderModal={this.props.showOrderModal}
-                ></ListItemsToPages>
-            </div>
+            <DocumentMeta {...meta}>
+                <div className='items-list__page container'>
+                    <h1>Сценические конструкции</h1>
+                    <ListItemsToPages
+                    API={stageAPI}
+                    showOrderModal={this.props.showOrderModal}
+                    ></ListItemsToPages>
+                </div>
+            </DocumentMeta>
+            
         )
     }
 }
